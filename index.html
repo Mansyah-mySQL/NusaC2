@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" class="bg-[#14181C]">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sinemata</title>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Fonts -->
@@ -16,12 +16,23 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet" />
+
+    <style>
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+    </style>
 </head>
 
-<body class="bg-[#14181C]">
+<body class="bg-[#14181C] min-h-screen overflow-x-hidden">
+
     <!-- Navbar -->
     <nav class="navbar bg-[#1C2127] w-full py-5">
-        <div class="wrapper max-w-7xl mx-auto flex items-center justify-between">
+        <div class="wrapper max-w-7xl mx-auto flex items-center justify-between w-full">
             <!-- Logo -->
             <div class="logo-nav flex items-center gap-25">
                 <div class="logo font-bebas text-[22px] text-white">
@@ -40,13 +51,13 @@
             <!-- Profile -->
             <div class="profile w-[36px] h-[36px] bg-[#FF8000] rounded-full"></div>
         </div>
-    </nav>
+    </nav> <!-- End of Navbar -->
 
     <!-- Hero -->
     <div
-        class="mt-4 rounded-lg p-12 hero max-w-7xl mx-auto bg-linear-to-br from-[#2A1810] via-[#1A1F2E] to-[#0F1419] flex flex-col">
+        class="mt-4 rounded-lg p-12 hero-section max-w-7xl mx-auto bg-linear-to-br from-[#2A1810] via-[#1A1F2E] to-[#0F1419] flex flex-col">
         <div
-            class="bades-featured bg-[#FF80002E]/18 w-fit text-[#FF8000] border border-[#FF800066]/40 rounded-md py-1 px-2">
+            class="badges-featured bg-[#FF80002E]/18 w-fit text-[#FF8000] border border-[#FF800066]/40 rounded-md py-1 px-2">
             <p class="font-inter text-[10px] font-bold">FEATURED THIS WEEK</p>
         </div>
 
@@ -69,17 +80,384 @@
         </div>
 
         <div class="actions mt-5 flex gap-3">
-            <button
-                class="btn-detail font-inter text-sm text-[#14181C] font-bold py-3 px-6 bg-amber-600 hover:bg-amber-700 transition rounded-lg cursor-pointer">
+            <button class="btn btn-detail font-inter text-sm text-[#14181C] font-bold py-3 px-6 bg-amber-600 rounded-lg cursor-pointer 
+                hover:bg-amber-700 border-transparent shadow-none">
                 ▶ Lihat Detail
             </button>
-            <button
-                class="btn-watchlist font-inter text-sm text-white font-bold py-3 px-6 bg-white/10 hover:bg-white/20 transition rounded-lg cursor-pointer">
+            <button class="btn btn-watchlist btn-soft font-inter text-sm text-white font-bold py-3 px-6 bg-white/10 rounded-lg cursor-pointer 
+                hover:bg-white/20 border-transparent shadow-none">
                 + Watchlist
             </button>
         </div>
+    </div> <!-- End of Hero -->
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Trending Cards -->
+    <div class="trending-cards max-w-7xl mx-auto mt-10 flex flex-col gap-6">
+        <h2 class="font-bebas text-white text-3xl">Trending</h2>
+
+        <div class="carousel carousel-center gap-[30px] w-full w-full py-5 -my-5 overflow-y-visible">
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#4F46E5] to-[#06B6D4] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Interstellar
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Sci-Fi · Drama
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Interstellar</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.6</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2014</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#F59E0B] to-[#EF4444] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Dune: Part Two
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Sci-Fi · Adventure
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Dune: Part Two</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.9</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2024</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#10B981] to-[#3B82F6] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Severance
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Thriller · Mystery
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Severance</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.7</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2022</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#EC4899] to-[#8B5CF6] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        EEAAO
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Sci-Fi · Comedy
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Everything Everywhere All at Once</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.0</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2022</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#6366F1] to-[#A855F7] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Blade Runner 2049
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Sci-Fi · Action
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Blade Runner 2049</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.0</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2017</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#FF007A] to-[#7928CA] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Succession
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Drama · Corporate
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Succession</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.9</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2018</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End of Trending Cards -->
+
+    <!-- Recommended For You -->
+    <div class="recommended-cards max-w-7xl mx-auto mt-10 flex flex-col gap-6">
+        <h2 class="font-bebas text-white text-3xl">Recommended For You</h2>
+
+        <div class="carousel carousel-center gap-[30px] w-full w-full py-5 -my-5 overflow-y-visible">
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#4F46E5] to-[#06B6D4] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Interstellar
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Sci-Fi · Drama
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Interstellar</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.6</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2014</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#F59E0B] to-[#EF4444] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Dune: Part Two
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Sci-Fi · Adventure
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Dune: Part Two</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.9</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2024</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#10B981] to-[#3B82F6] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Severance
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Thriller · Mystery
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Severance</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.7</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2022</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#EC4899] to-[#8B5CF6] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        EEAAO
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Sci-Fi · Comedy
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Everything Everywhere All at Once</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.0</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2022</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#6366F1] to-[#A855F7] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Blade Runner 2049
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Sci-Fi · Action
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Blade Runner 2049</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.0</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2017</p>
+                </div>
+            </div>
+
+            <div class="carousel-item w-60 shrink-0 flex flex-col gap-2 group cursor-pointer">
+                <div class="card w-full aspect-[13/20] relative
+                bg-linear-to-br from-[#FF007A] to-[#7928CA] 
+                transition duration-300 group-hover:-translate-y-5 
+                rounded-3xl shadow-sm">
+                    <h1 class="font-bebas text-white text-4xl absolute bottom-4 left-4 z-10">
+                        Succession
+                    </h1>
+                    <h2 class="font-inter font-bold text-white text-sm absolute top-6 left-4 z-10">
+                        Drama · Corporate
+                    </h2>
+                    <button
+                        class="btn btn-circle btn-heart absolute top-4 right-4 bg-black/40 border-none hover:bg-black/60 z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="#FBBF24" class="size-[1.2em] transition-colors duration-200">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flavor-text">
+                    <div class="upper-text font-inter text-sm flex justify-between">
+                        <p class="text-white font-bold w-9/12">Succession</p>
+                        <p class="text-[#FBBF24] w-3/12 text-right">★ 8.9</p>
+                    </div>
+                    <p class="text-[#9CA3AF] text-xs mt-1">2018</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End of Recommended For You -->
+
+
 </body>
 
 </html>
